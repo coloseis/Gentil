@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using Gentil.WebAPI.Autorize;
 using Gentil.WebAPI.Log.Attribute;
 
 namespace Gentil.WebAPI
@@ -23,6 +24,9 @@ namespace Gentil.WebAPI
 
             // Log
             config.Filters.Add(new ExceptionFilter());
+
+            // Seguridad
+            config.Filters.Add(new TokenFilter());
         }
     }
 }

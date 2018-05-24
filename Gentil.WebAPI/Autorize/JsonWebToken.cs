@@ -45,7 +45,7 @@ namespace Gentil.WebAPI.Autorize
         {
             var tokenValidationParameters = new TokenValidationParameters();
             tokenValidationParameters.ValidIssuer = "self";
-            tokenValidationParameters.ValidAudience = "http://localhost:62198/";
+            tokenValidationParameters.ValidAudience = ConfigurationManager.AppSettings["SecurityTokenAddress"];
             tokenValidationParameters.IssuerSigningToken = new BinarySecretSecurityToken(AutorizeHelper.GetBytes(clave));
 
             var tokenHandler = new JwtSecurityTokenHandler();

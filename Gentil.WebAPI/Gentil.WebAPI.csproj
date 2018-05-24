@@ -464,6 +464,7 @@
     <Compile Include="Autorize\AutorizeHelper.cs" />
     <Compile Include="Autorize\GentilPrincipal.cs" />
     <Compile Include="Autorize\JsonWebToken.cs" />
+    <Compile Include="Autorize\TokenFilter.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
