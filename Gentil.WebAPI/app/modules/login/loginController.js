@@ -4,8 +4,6 @@
 
 function loginController($scope, $session) {
     $session.clear();
-    $scope.user = 'admin';
-    $scope.password = 'admin';
 
     $scope.submit = function () {
         $scope.$broadcast('show-errors-check-validity', 'form');
