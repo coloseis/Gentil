@@ -46,25 +46,4 @@ Global
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7EDC6343-0B24-4269-B0AF-9AB88BA3E236}
 	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 6
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://emlarosa.visualstudio.com/
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = Gentil.Business\\Gentil.Business.csproj
-		SccProjectName1 = Gentil.Business
-		SccLocalPath1 = Gentil.Business
-		SccProjectUniqueName2 = Gentil.DAL\\Gentil.DAL.csproj
-		SccProjectName2 = Gentil.DAL
-		SccLocalPath2 = Gentil.DAL
-		SccProjectUniqueName3 = Gentil.Repository\\Gentil.Repository.csproj
-		SccProjectName3 = Gentil.Repository
-		SccLocalPath3 = Gentil.Repository
-		SccProjectUniqueName4 = Gentil.Service\\Gentil.Service.csproj
-		SccProjectName4 = Gentil.Service
-		SccLocalPath4 = Gentil.Service
-		SccProjectUniqueName5 = Gentil.WebAPI\\Gentil.WebAPI.csproj
-		SccProjectName5 = Gentil.WebAPI
-		SccLocalPath5 = Gentil.WebAPI
-	EndGlobalSection
 EndGlobal
