@@ -2,6 +2,7 @@
     .module('gentilApp')
     .controller('navbarController', function ($scope, $session) {
         $scope.isLoggedIn = function () { return $session.isLoggedIn() };
+        $scope.logOut = function () { return $session.clear() };
     })
     .directive('navbar', [
         function () {

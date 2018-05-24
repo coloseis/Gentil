@@ -498,6 +498,10 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Gentil.Business\Gentil.Business.csproj">
+      <Project>{9721806B-D8A5-46BE-B29F-3E6E4E02C8DF}</Project>
+      <Name>Gentil.Business</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Gentil.Service\Gentil.Service.csproj">
       <Project>{489286f3-3893-4e42-a172-e5c829a54c56}</Project>
       <Name>Gentil.Service</Name>
