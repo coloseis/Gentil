@@ -1,0 +1,6 @@
+C:\TFS\Gentil\Gentil.IoC\bin\Debug\Gentil.IoC.dll
+C:\TFS\Gentil\Gentil.IoC\bin\Debug\Gentil.IoC.pdb
+C:\TFS\Gentil\Gentil.IoC\obj\Debug\Gentil.IoC.csprojResolveAssemblyReference.cache
+C:\TFS\Gentil\Gentil.IoC\obj\Debug\Gentil.IoC.csproj.CoreCompileInputs.cache
+C:\TFS\Gentil\Gentil.IoC\obj\Debug\Gentil.IoC.dll
+C:\TFS\Gentil\Gentil.IoC\obj\Debug\Gentil.IoC.pdb

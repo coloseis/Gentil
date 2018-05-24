@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2009
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gentil.Business", "Gentil.Business\Gentil.Business.csproj", "{9721806B-D8A5-46BE-B29F-3E6E4E02C8DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gentil.DAL", "Gentil.DAL\Gentil.DAL.csproj", "{C40FF0A8-E6AA-49BC-B305-3EA135BB3B93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gentil.Repository", "Gentil.Repository\Gentil.Repository.csproj", "{6A4C3302-5160-4EE3-98A3-9DF45807DF48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gentil.Service", "Gentil.Service\Gentil.Service.csproj", "{489286F3-3893-4E42-A172-E5C829A54C56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gentil.WebAPI", "Gentil.WebAPI\Gentil.WebAPI.csproj", "{C3054B13-9464-40ED-9AA4-1B897977F163}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9721806B-D8A5-46BE-B29F-3E6E4E02C8DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9721806B-D8A5-46BE-B29F-3E6E4E02C8DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9721806B-D8A5-46BE-B29F-3E6E4E02C8DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9721806B-D8A5-46BE-B29F-3E6E4E02C8DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C40FF0A8-E6AA-49BC-B305-3EA135BB3B93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C40FF0A8-E6AA-49BC-B305-3EA135BB3B93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C40FF0A8-E6AA-49BC-B305-3EA135BB3B93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C40FF0A8-E6AA-49BC-B305-3EA135BB3B93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A4C3302-5160-4EE3-98A3-9DF45807DF48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A4C3302-5160-4EE3-98A3-9DF45807DF48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A4C3302-5160-4EE3-98A3-9DF45807DF48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A4C3302-5160-4EE3-98A3-9DF45807DF48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{489286F3-3893-4E42-A172-E5C829A54C56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{489286F3-3893-4E42-A172-E5C829A54C56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{489286F3-3893-4E42-A172-E5C829A54C56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{489286F3-3893-4E42-A172-E5C829A54C56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3054B13-9464-40ED-9AA4-1B897977F163}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3054B13-9464-40ED-9AA4-1B897977F163}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3054B13-9464-40ED-9AA4-1B897977F163}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3054B13-9464-40ED-9AA4-1B897977F163}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7EDC6343-0B24-4269-B0AF-9AB88BA3E236}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://emlarosa.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Gentil.Business\\Gentil.Business.csproj
+		SccProjectName1 = Gentil.Business
+		SccLocalPath1 = Gentil.Business
+		SccProjectUniqueName2 = Gentil.DAL\\Gentil.DAL.csproj
+		SccProjectName2 = Gentil.DAL
+		SccLocalPath2 = Gentil.DAL
+		SccProjectUniqueName3 = Gentil.Repository\\Gentil.Repository.csproj
+		SccProjectName3 = Gentil.Repository
+		SccLocalPath3 = Gentil.Repository
+		SccProjectUniqueName4 = Gentil.Service\\Gentil.Service.csproj
+		SccProjectName4 = Gentil.Service
+		SccLocalPath4 = Gentil.Service
+		SccProjectUniqueName5 = Gentil.WebAPI\\Gentil.WebAPI.csproj
+		SccProjectName5 = Gentil.WebAPI
+		SccLocalPath5 = Gentil.WebAPI
+	EndGlobalSection
+EndGlobal

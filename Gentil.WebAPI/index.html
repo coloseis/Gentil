@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html ng-app="gentilApp">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/gentil.css" rel="stylesheet" />
+    <link href="Content/DataTables/css/jquery.dataTables.css" rel="stylesheet" />
+    <link href="Scripts/angular-datatables-0.6.2/css/angular-datatables.css" rel="stylesheet" />
+
+    <title>Gentil</title>
+</head>
+<body>
+    <navbar></navbar>
+    <div class="container margintop" ng-view>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="Scripts/jquery-3.2.1.js"></script>
+    <script src="Scripts/umd/popper.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <script src="Scripts/angular-cookies.js"></script>
+    <script src="Scripts/angular-messages.js"></script>
+    <script src="Scripts/angular-resource.js"></script>
+    <script src="Scripts/DataTables/jquery.dataTables.js"></script>
+    <script src="Scripts/angular-datatables-0.6.2/angular-datatables.js"></script>
+    <script src="Scripts/gentil.js"></script>
+
+    <!-- app -->
+    <script src="app/app.js"></script>
+    <!-- app:servicios -->
+    <script src="app/services/session.js"></script>
+    <script src="app/services/usuarioService.js"></script>
+    <!-- app:directives -->
+    <script src="app/directives/navbarController.js"></script>
+    <!-- app:controllers -->
+    <script src="app/modules/home/homeController.js"></script>
+    <script src="app/modules/login/loginController.js"></script>
+    <script src="app/modules/usuario/usuariosController.js"></script>
+    <script src="app/modules/usuario/usuarioController.js"></script>
+    <!-- app:config -->
+    <script src="app/app.route.js"></script>
+    <script src="app/app.events.js"></script>
+    <script src="app/app.http.js"></script>
+
+
+</body>
+</html>
