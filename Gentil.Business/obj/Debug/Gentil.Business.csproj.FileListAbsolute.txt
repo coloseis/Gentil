@@ -1,6 +1,0 @@
-C:\TFS\Gentil\Gentil.Business\bin\Debug\Gentil.Business.dll
-C:\TFS\Gentil\Gentil.Business\bin\Debug\Gentil.Business.pdb
-C:\TFS\Gentil\Gentil.Business\obj\Debug\Gentil.Business.csproj.CoreCompileInputs.cache
-C:\TFS\Gentil\Gentil.Business\obj\Debug\Gentil.Business.dll
-C:\TFS\Gentil\Gentil.Business\obj\Debug\Gentil.Business.pdb
-C:\TFS\Gentil\Gentil.Business\obj\Debug\Gentil.Business.csprojResolveAssemblyReference.cache
