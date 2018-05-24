@@ -7,7 +7,7 @@ namespace Gentil.WebAPI.Autorize
         public static GentilPrincipal Principal
         {
             get { return (GentilPrincipal)Thread.CurrentPrincipal; }
-            set { Thread.CurrentPrincipal = value; }
+            //set { Thread.CurrentPrincipal = value; }
         }
 
         public static byte[] GetBytes(string str)

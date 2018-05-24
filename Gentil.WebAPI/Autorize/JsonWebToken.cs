@@ -7,6 +7,8 @@ using System.Linq;
 using System.Security.Claims;
 using System.Security.Principal;
 using System.ServiceModel.Security.Tokens;
+using System.Threading;
+using System.Web;
 using Gentil.Service.Models;
 
 namespace Gentil.WebAPI.Autorize
@@ -59,7 +61,9 @@ namespace Gentil.WebAPI.Autorize
             var roles = tokenIdentity.Claims.Where(c => c.Type == ClaimTypes.Role).Select(c => c.Value).ToArray();
 
             var principal = new GentilPrincipal(usuarioId, userName, identity, roles);
-            AutorizeHelper.Principal = principal;
+            //AutorizeHelper.Principal = principal;
+            Thread.CurrentPrincipal = principal;
+            HttpContext.Current.User = principal;
         }
     }
 }

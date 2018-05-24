@@ -55,7 +55,9 @@
   <ItemGroup>
     <Compile Include="IoC\IoCRepositoryModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\Contracts\IRoleRepository.cs" />
     <Compile Include="Repositories\Contracts\IUserRepository.cs" />
+    <Compile Include="Repositories\RoleRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>

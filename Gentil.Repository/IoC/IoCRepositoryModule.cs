@@ -11,6 +11,7 @@ namespace Gentil.Repository.IoC
         {
             IoCContextModule.Inject(container);
             container.Register(typeof(IUserRepository), typeof(UserRepository), Lifestyle.Scoped);
+            container.Register(typeof(IRoleRepository), typeof(RoleRepository), Lifestyle.Scoped);
         }
     }
 }

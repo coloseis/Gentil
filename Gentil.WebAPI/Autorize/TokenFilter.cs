@@ -10,14 +10,23 @@ using System.Web.Http.Filters;
 
 namespace Gentil.WebAPI.Autorize
 {
-    public class TokenFilter : AuthorizationFilterAttribute
+    public class TokenFilter : AuthorizeAttribute
     {
-        public override void OnAuthorization(HttpActionContext actionContext)
+        protected override void HandleUnauthorizedRequest(HttpActionContext actionContext)
         {
-            if (EsAllowAnonymous(actionContext) || EsTokenValido(actionContext))
-                return;
+            if (!EsAllowAnonymous(actionContext) && !EsTokenValido(actionContext))
+                actionContext.Response = actionContext.Request.CreateErrorResponse(HttpStatusCode.Unauthorized, "Unauthorized");
 
-            throw new HttpResponseException(actionContext.Request.CreateErrorResponse(HttpStatusCode.Unauthorized, "No autorizado."));
+            if (AutorizeHelper.Principal.RoleID.ToString() != Roles)
+                actionContext.Response = actionContext.Request.CreateErrorResponse(HttpStatusCode.Forbidden, "Forbidden");
+        }
+
+        protected override bool IsAuthorized(HttpActionContext actionContext)
+        {
+            if (!EsAllowAnonymous(actionContext) && !EsTokenValido(actionContext))
+                return false;
+
+            return Roles == "" || AutorizeHelper.Principal.RoleID.ToString() == Roles;
         }
 
         private static bool EsAllowAnonymous(HttpActionContext actionContext)

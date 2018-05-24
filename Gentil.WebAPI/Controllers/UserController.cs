@@ -1,10 +1,11 @@
 ﻿using System.Web.Http;
 using Gentil.Service.Models;
 using Gentil.Service.Services.Contracts;
-using Gentil.WebAPI.Log.Attribute;
+using Gentil.WebAPI.Autorize;
 
 namespace Gentil.WebAPI.Controllers
 {
+    [TokenFilter(Roles = "1")]
     public class UsersController : ApiController
     {
         private readonly IUsersService _usersService;
@@ -13,104 +14,55 @@ namespace Gentil.WebAPI.Controllers
         {
             _usersService = usersService;
         }
-
+        
         // GET: api/Users
+        
+        [HttpGet]
         public UserDTO[] GetUsers()
         {
             return _usersService.GetUsers();
         }
 
-        //// GET: api/Users/5
-        //[ResponseType(typeof(User))]
-        //public async Task<IHttpActionResult> GetUser(int id)
-        //{
-        //    User user = await db.Users.FindAsync(id);
-        //    if (user == null)
-        //    {
-        //        return NotFound();
-        //    }
+        // GET: api/Users/5
+        [HttpGet]
+        public UserDTO GetUser(int id)
+        {
+            return _usersService.GetUserByID(id);
+        }
 
-        //    return Ok(user);
-        //}
+        // POST: api/Users
+        [HttpPost]
+        public IHttpActionResult Post([FromBody] UserDTO value)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
-        //// PUT: api/Users/5
-        //[ResponseType(typeof(void))]
-        //public async Task<IHttpActionResult> PutUser(int id, User user)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
+            _usersService.InsertUser(value);
 
-        //    if (id != user.ID)
-        //    {
-        //        return BadRequest();
-        //    }
+            return Ok();
+        }
 
-        //    db.Entry(user).State = EntityState.Modified;
+        // PUT: api/User/5
+        [HttpPut]
+        public IHttpActionResult Put([FromBody] UserDTO value)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
-        //    try
-        //    {
-        //        await db.SaveChangesAsync();
-        //    }
-        //    catch (DbUpdateConcurrencyException)
-        //    {
-        //        if (!UserExists(id))
-        //        {
-        //            return NotFound();
-        //        }
-        //        else
-        //        {
-        //            throw;
-        //        }
-        //    }
+            _usersService.UpdateUser(value);
 
-        //    return StatusCode(HttpStatusCode.NoContent);
-        //}
+            return Ok();
+        }
 
-        //// POST: api/Users
-        //[ResponseType(typeof(User))]
-        //public async Task<IHttpActionResult> PostUser(User user)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
-
-        //    db.Users.Add(user);
-        //    await db.SaveChangesAsync();
-
-        //    return CreatedAtRoute("DefaultApi", new { id = user.ID }, user);
-        //}
-
-        //// DELETE: api/Users/5
-        //[ResponseType(typeof(User))]
-        //public async Task<IHttpActionResult> DeleteUser(int id)
-        //{
-        //    User user = await db.Users.FindAsync(id);
-        //    if (user == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    db.Users.Remove(user);
-        //    await db.SaveChangesAsync();
-
-        //    return Ok(user);
-        //}
-
-        //protected override void Dispose(bool disposing)
-        //{
-        //    if (disposing)
-        //    {
-        //        db.Dispose();
-        //    }
-        //    base.Dispose(disposing);
-        //}
-
-        //private bool UserExists(int id)
-        //{
-        //    return db.Users.Count(e => e.ID == id) > 0;
-        //}
+        // DELETE: api/User/5
+        [HttpDelete]
+        public void Delete(int id)
+        {
+            _usersService.DeleteUser(id);
+        }
     }
 }

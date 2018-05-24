@@ -26,7 +26,7 @@ namespace Gentil.WebAPI
             config.Filters.Add(new ExceptionFilter());
 
             // Seguridad
-            config.Filters.Add(new TokenFilter());
+            //config.Filters.Add(new TokenFilter());
         }
     }
 }
