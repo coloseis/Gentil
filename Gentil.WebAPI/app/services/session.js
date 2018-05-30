@@ -11,11 +11,11 @@ function session($cookies, $window, $http, $location) {
             $cookies.remove('XSRF-TOKEN');
             $location.path('/login');
         },
-        logIn: function (user, password) {
+        logIn: function (email) {
             $http({
                 method: "GET",
                 url: 'login',
-                params: { user: user, password: $window.btoa(password) },
+                params: { email: email },
                 cache: false
             })
                 .then(

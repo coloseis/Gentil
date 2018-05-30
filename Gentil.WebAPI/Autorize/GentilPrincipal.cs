@@ -8,15 +8,15 @@ namespace Gentil.WebAPI.Autorize
 {
     public class GentilPrincipal : GenericPrincipal
     {
-        public GentilPrincipal(int id, string user, IIdentity identity, string[] roles) : base(identity, roles)
+        public GentilPrincipal(Guid id, string user, IIdentity identity, string[] roles) : base(identity, roles)
         {
             this.ID = id;
-            this.User = user;
-            this.RoleID = int.Parse(roles[0]);
+            this.Name = user;
+            this.Role = roles[0];
         }
 
-        public int ID { get; set; }
-        public string User { get; set; }
-        public int RoleID { get; set; }
+        public Guid ID { get; set; }
+        public string Name { get; set; }
+        public string Role { get; set; }
     }
 }

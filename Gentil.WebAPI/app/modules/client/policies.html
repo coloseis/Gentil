@@ -1,0 +1,24 @@
+﻿<div ng-show="!policies">
+    <p class="lead">Cargando...</p>
+</div>
+<div ng-show="policies">
+    <h2>Pólizas de {{ClientName}}</h2>
+    <table datatable="ng" class="row-border hover">
+        <thead>
+            <tr>
+                <th>Fecha</th>
+                <th>Suma Asegurada</th>
+                <th>Pago Fraccionado</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="policy in policies">
+                <td>{{ policy.InceptionDate | date:'dd/MM/yyyy HH:mm' }}</td>
+                <td class="text-right">{{ policy.AmountInsured | currency }}</td>
+                <td>{{ (policy.InstallmentPayment ? 'SI': 'NO') }}</td>
+                <td>{{ policy.Email }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

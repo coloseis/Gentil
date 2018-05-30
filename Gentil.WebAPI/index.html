@@ -15,7 +15,7 @@
 </head>
 <body>
     <navbar></navbar>
-    <div class="container margintop" ng-view>
+    <div class="container margintop" ng-view ng-cloak>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -35,14 +35,13 @@
     <script src="app/app.js"></script>
     <!-- app:servicios -->
     <script src="app/services/session.js"></script>
-    <script src="app/services/usuarioService.js"></script>
     <!-- app:directives -->
     <script src="app/directives/navbarController.js"></script>
     <!-- app:controllers -->
     <script src="app/modules/home/homeController.js"></script>
     <script src="app/modules/login/loginController.js"></script>
-    <script src="app/modules/usuario/usuariosController.js"></script>
-    <script src="app/modules/usuario/usuarioController.js"></script>
+    <script src="app/modules/client/clientsController.js"></script>
+    <script src="app/modules/client/policiesController.js"></script>
     <!-- app:config -->
     <script src="app/app.route.js"></script>
     <script src="app/app.events.js"></script>

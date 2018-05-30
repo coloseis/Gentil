@@ -12,17 +12,13 @@ function ConfigRouteProvider($routeProvider) {
             templateUrl: modules + 'login/login.html',
             controller: 'loginController'
         })
-        .when('/usuarios', {
-            templateUrl: modules + 'usuario/usuarios.html',
-            controller: 'usuariosController'
+        .when('/clients', {
+            templateUrl: modules + 'client/clients.html',
+            controller: 'clientsController'
         })
-        .when('/usuario', {
-            templateUrl: modules + 'usuario/usuario.html',
-            controller: 'usuarioController'
-        })
-        .when('/usuario/:id', {
-            templateUrl: modules + 'usuario/usuario.html',
-            controller: 'usuarioController'
+        .when('/client/:name/policies', {
+            templateUrl: modules + 'client/policies.html',
+            controller: 'policiesController'
         })
         .otherwise({
             redirectTo: '/'

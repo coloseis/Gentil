@@ -16,7 +16,7 @@ namespace Gentil.WebAPI.Autorize
     public class JsonWebToken
     {
         private const string clave = "Gentil.jsonWebToken";
-        public string Encode(UserDTO usuario)
+        public string Encode(ClientDTO client)
         {
             var now = DateTime.UtcNow;
 
@@ -25,9 +25,9 @@ namespace Gentil.WebAPI.Autorize
             var tokenDescriptor = new SecurityTokenDescriptor();
 
             var claims = new List<Claim>();
-            claims.Add(new Claim(ClaimTypes.Name, usuario.Name, ClaimValueTypes.String));
-            claims.Add(new Claim(ClaimTypes.NameIdentifier, usuario.ID.ToString(), ClaimValueTypes.Integer));
-            claims.Add(new Claim(ClaimTypes.Role, usuario.RoleID.ToString(), ClaimValueTypes.Integer));
+            claims.Add(new Claim(ClaimTypes.Name, client.Name, ClaimValueTypes.String));
+            claims.Add(new Claim(ClaimTypes.NameIdentifier, client.ID.ToString(), ClaimValueTypes.String));
+            claims.Add(new Claim(ClaimTypes.Role, client.Role, ClaimValueTypes.String));
 
             tokenDescriptor.Subject = new ClaimsIdentity(claims);
 
@@ -41,8 +41,6 @@ namespace Gentil.WebAPI.Autorize
             return tokenHandler.WriteToken(token);
         }
 
-        
-
         public void DecodeToPrincipal(string token)
         {
             var tokenValidationParameters = new TokenValidationParameters();
@@ -54,13 +52,13 @@ namespace Gentil.WebAPI.Autorize
             SecurityToken validatedToken;
             var tokenIdentity = tokenHandler.ValidateToken(token, tokenValidationParameters, out validatedToken).Identities.First();
 
-            var usuarioId = int.Parse(tokenIdentity.Claims.Single(c => c.Type.Contains("nameidentifier")).Value);
-            var userName = tokenIdentity.Name;
+            var clientId = new Guid(tokenIdentity.Claims.Single(c => c.Type.Contains("nameidentifier")).Value);
+            var clientName = tokenIdentity.Name;
 
             GenericIdentity identity = new GenericIdentity(tokenIdentity.Name);
             var roles = tokenIdentity.Claims.Where(c => c.Type == ClaimTypes.Role).Select(c => c.Value).ToArray();
 
-            var principal = new GentilPrincipal(usuarioId, userName, identity, roles);
+            var principal = new GentilPrincipal(clientId, clientName, identity, roles);
             //AutorizeHelper.Principal = principal;
             Thread.CurrentPrincipal = principal;
             HttpContext.Current.User = principal;

@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gentil.Service", "Gentil.Se
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gentil.WebAPI", "Gentil.WebAPI\Gentil.WebAPI.csproj", "{C3054B13-9464-40ED-9AA4-1B897977F163}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gentil.Test", "Gentil.Test\Gentil.Test.csproj", "{7633D103-1884-40F0-B113-BB70C855CC6A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{C3054B13-9464-40ED-9AA4-1B897977F163}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3054B13-9464-40ED-9AA4-1B897977F163}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3054B13-9464-40ED-9AA4-1B897977F163}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7633D103-1884-40F0-B113-BB70C855CC6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7633D103-1884-40F0-B113-BB70C855CC6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7633D103-1884-40F0-B113-BB70C855CC6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7633D103-1884-40F0-B113-BB70C855CC6A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

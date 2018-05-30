@@ -5,11 +5,11 @@ using System.Text;
 
 namespace Gentil.Business.Models
 {
-    public class User
+    public class Client
     {
-        public int ID { get; set; }
+        public Guid ID { get; set; }
         public string Name { get; set; }
-        public string Password { get; set; }
-        public virtual Role Role { get; set; }
+        public string Email { get; set; }
+        public string Role { get; set; }
     }
 }

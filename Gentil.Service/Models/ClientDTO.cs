@@ -5,12 +5,11 @@ using System.Text;
 
 namespace Gentil.Service.Models
 {
-    public class UserDTO
+    public class ClientDTO
     {
-        public int ID { get; set; }
+        public Guid ID { get; set; }
         public string Name { get; set; }
-        public string Password { get; set; }
-        public string RoleID { get; set; }
+        public string Email { get; set; }
         public string Role { get; set; }
     }
 }

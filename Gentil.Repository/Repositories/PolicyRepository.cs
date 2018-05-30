@@ -9,39 +9,39 @@ using Gentil.DAL.Contexts;
 
 namespace Gentil.Repository.Repositories
 {
-    public class RoleRepository : IRoleRepository
+    public class PolicyRepository : IPolicyRepository
     {
         private DbContext _context;
 
-        public RoleRepository(DbContext context)
+        public PolicyRepository(DbContext context)
         {
             this._context = context;
         }
 
-        public IEnumerable<Role> GetRoles()
+        public IEnumerable<Policy> GetAll()
         {
-            return _context.Set<Role>().ToList();
+            return _context.Set<Policy>().ToList();
         }
 
-        public Role GetRoleByID(int id)
+        public Policy GetByID(Guid id)
         {
-            return _context.Set<Role>().Find(id);
+            return _context.Set<Policy>().Find(id);
         }
 
-        public void InsertRole(Role role)
+        public void Insert(Policy entity)
         {
-            _context.Set<Role>().Add(role);
+            _context.Set<Policy>().Add(entity);
         }
 
-        public void DeleteRole(int roleID)
+        public void Delete(Guid id)
         {
-            Role role = _context.Set<Role>().Find(roleID);
-            _context.Set<Role>().Remove(role);
+            Policy entity = _context.Set<Policy>().Find(id);
+            _context.Set<Policy>().Remove(entity);
         }
 
-        public void UpdateRole(Role role)
+        public void Update(Policy entity)
         {
-            _context.Entry(role).State = EntityState.Modified;
+            _context.Entry(entity).State = EntityState.Modified;
         }
 
         public void Save()

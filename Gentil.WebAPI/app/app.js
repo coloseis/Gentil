@@ -1,5 +1,5 @@
 ﻿angular
-    .module('gentilApp', ['ngRoute', 'ngCookies', 'ngResource', 'datatables', 'usuarioService']);
+    .module('gentilApp', ['ngRoute', 'ngCookies', 'ngResource', 'datatables']);
 
 angular
     .module('gentilApp')

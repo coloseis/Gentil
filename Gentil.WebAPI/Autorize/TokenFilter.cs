@@ -17,7 +17,7 @@ namespace Gentil.WebAPI.Autorize
             if (!EsAllowAnonymous(actionContext) && !EsTokenValido(actionContext))
                 actionContext.Response = actionContext.Request.CreateErrorResponse(HttpStatusCode.Unauthorized, "Unauthorized");
 
-            if (AutorizeHelper.Principal.RoleID.ToString() != Roles)
+            if (!Roles.Contains(AutorizeHelper.Principal.Role))
                 actionContext.Response = actionContext.Request.CreateErrorResponse(HttpStatusCode.Forbidden, "Forbidden");
         }
 
@@ -26,7 +26,7 @@ namespace Gentil.WebAPI.Autorize
             if (!EsAllowAnonymous(actionContext) && !EsTokenValido(actionContext))
                 return false;
 
-            return Roles == "" || AutorizeHelper.Principal.RoleID.ToString() == Roles;
+            return Roles == "" || Roles.Contains(AutorizeHelper.Principal.Role);
         }
 
         private static bool EsAllowAnonymous(HttpActionContext actionContext)

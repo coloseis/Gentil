@@ -9,39 +9,39 @@ using Gentil.DAL.Contexts;
 
 namespace Gentil.Repository.Repositories
 {
-    public class UserRepository : IUserRepository
+    public class ClientRepository : IClientRepository
     {
         private DbContext _context;
 
-        public UserRepository(DbContext context)
+        public ClientRepository(DbContext context)
         {
             this._context = context;
         }
 
-        public IEnumerable<User> GetUsers()
+        public IEnumerable<Client> GetAll()
         {
-            return _context.Set<User>().ToList();
+            return _context.Set<Client>().ToList();
         }
 
-        public User GetUserByID(int id)
+        public Client GetByID(Guid id)
         {
-            return _context.Set<User>().Find(id);
+            return _context.Set<Client>().Find(id);
         }
 
-        public void InsertUser(User user)
+        public void Insert(Client entity)
         {
-            _context.Set<User>().Add(user);
+            _context.Set<Client>().Add(entity);
         }
 
-        public void DeleteUser(int userID)
+        public void Delete(Guid id)
         {
-            User user = _context.Set<User>().Find(userID);
-            _context.Set<User>().Remove(user);
+            Client entity = _context.Set<Client>().Find(id);
+            _context.Set<Client>().Remove(entity);
         }
 
-        public void UpdateUser(User user)
+        public void Update(Client entity)
         {
-            _context.Entry(user).State = EntityState.Modified;
+            _context.Entry(entity).State = EntityState.Modified;
         }
 
         public void Save()

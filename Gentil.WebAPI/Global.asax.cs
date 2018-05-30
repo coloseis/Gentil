@@ -1,4 +1,5 @@
-﻿using System.Web.Http;
+﻿using System.Configuration;
+using System.Web.Http;
 using Gentil.Service.IoC;
 using SimpleInjector;
 using SimpleInjector.Integration.WebApi;
@@ -21,7 +22,7 @@ namespace Gentil.WebAPI
             var container = new Container();
             container.Options.DefaultScopedLifestyle = new AsyncScopedLifestyle();
 
-            IoCServiceModule.Inject(container);
+            IoCServiceModule.Inject(container, bool.Parse(ConfigurationManager.AppSettings["UseMockyRepository"]));
 
             container.RegisterWebApiControllers(GlobalConfiguration.Configuration);
             container.Verify();

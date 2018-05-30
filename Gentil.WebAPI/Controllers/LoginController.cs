@@ -10,28 +10,27 @@ namespace Gentil.WebAPI.Controllers
 {
     public class LoginController : ApiController
     {
-        private readonly IUsersService _usersService;
+        private readonly IClientService _clientService;
 
-        public LoginController(IUsersService usersService)
+        public LoginController(IClientService clientService)
         {
-            _usersService = usersService;
+            _clientService = clientService;
         }
 
         [Route("login")]
         [HttpGet]
         [AllowAnonymous]
         [ResponseType(typeof(string))]
-        public IHttpActionResult LogIn(string user, string password)
+        public IHttpActionResult LogIn(string email)
         {
-            if (string.IsNullOrEmpty(user) || string.IsNullOrEmpty(password))
+            if (string.IsNullOrEmpty(email))
                 return BadRequest("Inicio de sesión inválido.");
 
-            password = Encoding.UTF8.GetString(Convert.FromBase64String(password));
-            var usuario = _usersService.Validate(user, password);
-            if (usuario != null)
+            var client = _clientService.GetClientByEmail(email);
+            if (client != null)
             {
                 var jwt = new JsonWebToken();
-                var token = jwt.Encode(usuario);
+                var token = jwt.Encode(client);
                 return Ok(token);
             }
             return Unauthorized();

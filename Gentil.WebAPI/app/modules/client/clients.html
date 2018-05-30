@@ -1,0 +1,26 @@
+﻿<div ng-show="!clients">
+    <p class="lead">Cargando...</p>
+</div>
+<div ng-show="clients">
+    <h2>Clientes</h2>
+    <table datatable="ng" class="row-border hover">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Rol</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="client in clients">
+                <td>{{ client.Name }}</td>
+                <td>{{ client.Email }}</td>
+                <td>{{ client.Role }}</td>
+                <td class="text-right">
+                    <a href="#!/client/{{ client.Name }}/policies" class="btn btn-secondary" role="button" aria-pressed="true">Pólizas</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

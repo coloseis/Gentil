@@ -10,9 +10,9 @@ namespace Gentil.DAL.Contexts
         {
             Database.SetInitializer<GentilContext>(new CreateDatabaseIfNotExists<GentilContext>());
         }
-
-        public DbSet<User> Users { get; set; }
-        public DbSet<Role> Roles { get; set; }
+        
+        public DbSet<Client> Clients { get; set; }
+        public DbSet<Policy> Policies { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
